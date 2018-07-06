@@ -11,11 +11,18 @@ import UIKit
 class ViewController2: UIViewController {
 
     @IBOutlet weak var imv: UIImageView!
+    @IBOutlet weak var imv2: UIImageView!
+    @IBOutlet weak var imv3: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         imv.image = UIImage.color(UIColor.cyan)
+        
+        let locations: [CGFloat] = [0.1, 0.4, 0.5, 0.8, 1.0];
+        let colors = [UIColor.random, UIColor.random, UIColor.random, UIColor.random, UIColor.random]
+        
+        imv2.image = UIImage.gradientColor(colors, locations: locations, start: CGPoint(x: 0, y: 0), end: CGPoint(x: imv2.bounds.size.width, y: imv2.bounds.size.height))
     }
 
     override func didReceiveMemoryWarning() {

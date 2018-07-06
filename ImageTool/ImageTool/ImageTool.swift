@@ -21,6 +21,30 @@ extension UIImage {
         return image!
     }
     
+    class func gradientColor(_ colors: [UIColor], locations: [CGFloat], start: CGPoint, end: CGPoint) -> UIImage{
+        UIGraphicsBeginImageContext(CGSize(width: 100, height: 100))
+        let ctx: CGContext? = UIGraphicsGetCurrentContext()
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        var componets = [CGFloat]()
+        
+        for i in 0..<colors.count {
+            let c = colors[i].cgColor
+            
+            for j in 0..<4 {
+                componets.append(c.components![j])
+            }
+            
+        }
+        
+        let gradient = CGGradient.init(colorSpace: colorSpace, colorComponents: componets, locations: locations, count: locations.count)
+        ctx?.drawLinearGradient(gradient!, start: start, end: end, options: .drawsAfterEndLocation)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
     // 按照图片比例，
     func zq_resizeImage(size: CGSize) -> UIImage {
         
@@ -108,5 +132,27 @@ extension UIImage {
         let image2 = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image2!
+    }
+}
+extension UIColor {
+    
+    class var random: UIColor {
+        get {
+            let r = CGFloat(arc4random_uniform(255))
+            let g = CGFloat(arc4random_uniform(255))
+            let b = CGFloat(arc4random_uniform(255))
+            return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
+        }
+    }
+    
+    class func randomColor() -> UIColor {
+        let r = CGFloat(arc4random_uniform(255))
+        let g = CGFloat(arc4random_uniform(255))
+        let b = CGFloat(arc4random_uniform(255))
+        return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
+    }
+    class func rgba(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
+        
+        return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
     }
 }

@@ -85,7 +85,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aH5-xp-qGl">
-                                <rect key="frame" x="59" y="132" width="240" height="128"/>
+                                <rect key="frame" x="67" y="76" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KA5-Wh-ez7">
+                                <rect key="frame" x="67" y="255" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n59-E5-Ezc">
+                                <rect key="frame" x="67" y="434" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -95,6 +103,8 @@
                     <navigationItem key="navigationItem" id="YTx-Iu-waD"/>
                     <connections>
                         <outlet property="imv" destination="aH5-xp-qGl" id="LPE-uE-KOn"/>
+                        <outlet property="imv2" destination="KA5-Wh-ez7" id="Iaf-OK-MO6"/>
+                        <outlet property="imv3" destination="n59-E5-Ezc" id="1k9-Ur-CDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUU-gv-QND" userLabel="First Responder" sceneMemberID="firstResponder"/>

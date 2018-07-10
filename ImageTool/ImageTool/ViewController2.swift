@@ -148,7 +148,45 @@ class ViewController5: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+class ViewController6: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        let img = UIImage(named: "bb")!
+      
+        let imv = UIImageView(frame: CGRect(x: 100, y: 100, width: img.size.width/2, height: img.size.height/2))
+        self.view.addSubview(imv)
+        imv.image = img
+        
+        let imv2 = UIImageView(frame: CGRect(x: 50, y: 300, width: 200, height: 280))
+        self.view.addSubview(imv2)
+        imv2.image = UIImage.zq_resizeImage(named: "bb")
+    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of
+    }
+}
+class ViewController7: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        let path2 = NSHomeDirectory()+"/tmp/圆角.jpg"
+        let img = UIImage(named: path2)!
+        
+        let imv = UIImageView(frame: CGRect(x: 100, y: 100, width: 200, height:  150))
+        self.view.addSubview(imv)
+        imv.image = img.tined(color: UIColor.cyan, fraction: 0.3)
+        
+    }
     
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of
+    }
 }

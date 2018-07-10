@@ -45,6 +45,32 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image!
     }
+    //
+    func tined(color: UIColor, fraction: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 0)
+        
+        color.set()
+        UIRectFill(CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height), blendMode: .destinationIn, alpha: 1)
+        if fraction>0 {
+            self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height), blendMode: .sourceAtop, alpha: fraction)
+        }
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
+        
+    }
+    
+    // 自由拉伸
+    class func zq_resizeImage(named: String) -> UIImage {
+        let img = UIImage(named: named)
+        let h = img!.size.height
+        let w = img!.size.width
+        
+        //UIEdgeInsetsMake(h*0.5-10, w*0.5-10, h*0.5-10, w*0.5-10)
+        let newImg = img!.resizableImage(withCapInsets: UIEdgeInsetsMake(h*0.5-5, w*0.5-5, h*0.5-5, w*0.5-5), resizingMode: .tile)
+        return newImg
+    }
     // 按照图片比例，
     func zq_resizeImage(size: CGSize) -> UIImage {
         
@@ -132,6 +158,17 @@ extension UIImage {
         let image2 = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image2!
+    }
+    
+    // 截图
+    
+    class func capture(_ view: UIView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0)
+        let ctx: CGContext? = UIGraphicsGetCurrentContext()
+        view.layer.render(in: ctx!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
 }
 extension UIColor {

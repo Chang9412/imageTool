@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eM0-lx-hOf">
-                                <rect key="frame" x="128" y="148" width="117" height="42"/>
+                                <rect key="frame" x="120" y="90" width="117" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="color"/>
                                 <connections>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-Qf-UDc">
-                                <rect key="frame" x="128" y="222" width="117" height="42"/>
+                                <rect key="frame" x="120" y="151" width="117" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="按比例缩放"/>
                                 <connections>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyd-bG-CRS">
-                                <rect key="frame" x="128" y="295" width="117" height="42"/>
+                                <rect key="frame" x="120" y="223" width="117" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="裁剪"/>
                                 <connections>
@@ -59,11 +59,27 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHW-hj-HfK">
-                                <rect key="frame" x="128" y="368" width="117" height="42"/>
+                                <rect key="frame" x="120" y="296" width="117" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="圆角"/>
                                 <connections>
                                     <segue destination="QKd-Js-Nto" kind="push" id="Lp6-xG-8tm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jy8-So-gcg">
+                                <rect key="frame" x="163" y="362" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="拉伸"/>
+                                <connections>
+                                    <segue destination="8uu-GY-TXx" kind="push" id="fq1-rf-oHG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5f-YN-SaO">
+                                <rect key="frame" x="163" y="444" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="染色"/>
+                                <connections>
+                                    <segue destination="s30-pH-oOi" kind="push" id="wMJ-o7-dtK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -126,6 +142,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRx-nl-hP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="793" y="3"/>
+        </scene>
+        <!--View Controller7-->
+        <scene sceneID="SAV-M7-Cb0">
+            <objects>
+                <viewController id="s30-pH-oOi" customClass="ViewController7" customModule="ImageTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J6R-RS-Tvw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UBN-CA-g90"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JAU-uv-UNl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7c-cS-lj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-852" y="190"/>
+        </scene>
+        <!--View Controller6-->
+        <scene sceneID="pEr-fI-pkE">
+            <objects>
+                <viewController id="8uu-GY-TXx" customClass="ViewController6" customModule="ImageTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b5R-g4-fCK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tqt-ME-ugI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cAq-vt-zWJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dt9-MM-QhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-366" y="342"/>
         </scene>
         <!--View Controller5-->
         <scene sceneID="fvo-h5-39e">

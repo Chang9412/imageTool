@@ -82,6 +82,14 @@
                                     <segue destination="s30-pH-oOi" kind="push" id="wMJ-o7-dtK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMz-pf-2OR">
+                                <rect key="frame" x="163" y="521" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="合成"/>
+                                <connections>
+                                    <segue destination="LeN-gB-zMr" kind="push" id="EgO-C9-vjV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -142,6 +150,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRx-nl-hP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="793" y="3"/>
+        </scene>
+        <!--View Controller8-->
+        <scene sceneID="57Y-8h-EBQ">
+            <objects>
+                <viewController id="LeN-gB-zMr" customClass="ViewController8" customModule="ImageTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9G-rT-SEL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceo-v9-Uth">
+                                <rect key="frame" x="0.0" y="78" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjL-I9-D1P">
+                                <rect key="frame" x="34" y="467" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OaA-IJ-XiZ">
+                                <rect key="frame" x="179" y="266" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="D11-XX-rpu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Un4-X8-g5t"/>
+                    <connections>
+                        <outlet property="imv1" destination="ceo-v9-Uth" id="zdp-Hg-noa"/>
+                        <outlet property="imv2" destination="OaA-IJ-XiZ" id="HyI-yk-9lf"/>
+                        <outlet property="imv3" destination="WjL-I9-D1P" id="Sil-Wc-KnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EsC-jK-aFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1204" y="8.5457271364317844"/>
         </scene>
         <!--View Controller7-->
         <scene sceneID="SAV-M7-Cb0">

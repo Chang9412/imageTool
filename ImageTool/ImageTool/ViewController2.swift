@@ -172,6 +172,8 @@ class ViewController6: UIViewController {
     }
 }
 class ViewController7: UIViewController {
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -183,6 +185,45 @@ class ViewController7: UIViewController {
         self.view.addSubview(imv)
         imv.image = img.tined(color: UIColor.cyan, fraction: 0.3)
         
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of
+    }
+}
+class ViewController8: UIViewController {
+    
+    @IBOutlet weak var imv1: UIImageView!
+    @IBOutlet weak var imv2: UIImageView!
+    @IBOutlet weak var imv3: UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        let m1 = UIImage(named: "1")
+        let m2 = UIImage(named: "2")
+        let m3 = UIImage(named: "3")
+        let m4 = UIImage(named: "4")
+        let m5 = UIImage(named: "5")
+        let m6 = UIImage(named: "6")
+        let m7 = UIImage(named: "7")
+        let m8 = UIImage(named: "8")
+        let m9 = UIImage(named: "9")
+        
+        let imgs1 = [m1!,m2!]
+        let rm1 = UIImage.creat(images: imgs1)
+        imv1.image = rm1
+        
+//        let imgs2 = [m1!,m2!, m3, m4]
+//        let rm2 = UIImage.creat(images: imgs2)
+//        imv2.image = rm2
+//
+//
+//        let imgs3 = [m1!,m2!, m3, m4, m5, m6]
+//        let rm3 = UIImage.creat(images: imgs3)
+//        imv3.image = rm3
     }
     
     override func didReceiveMemoryWarning() {

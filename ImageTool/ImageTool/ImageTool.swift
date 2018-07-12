@@ -60,7 +60,31 @@ extension UIImage {
         return img!
         
     }
-    
+    class func creat(images: [UIImage]) -> UIImage {
+        if images.count == 1 {
+            return images[0]
+        }else if images.count == 2 {
+            let size = CGSize(width: 200, height: 200)
+            let space:CGFloat = 10
+            
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+//            let ctx: CGContext? = UIGraphicsGetCurrentContext()
+            let img1 = images[0].zq_resizeImage(size: CGSize(width: (size.width-space)/2, height: size.height))
+            img1.draw(in: CGRect(x: 0, y: 0, width: (size.width-space)/2, height: size.height))
+            
+            let img2 = images[1].zq_resizeImage(size: CGSize(width: (size.width-space)/2, height: size.height))
+            img2.draw(in: CGRect(x: (size.width-space)/2+space, y: 0, width: (size.width-space)/2, height: size.height))
+            
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image!
+            
+        }else if images.count <= 4 {
+            return images[0]
+        }else {
+            return images[0]
+        }
+    }
     // 自由拉伸
     class func zq_resizeImage(named: String) -> UIImage {
         let img = UIImage(named: named)

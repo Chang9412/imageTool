@@ -61,29 +61,56 @@ extension UIImage {
         
     }
     class func creat(images: [UIImage]) -> UIImage {
+        let size = CGSize(width: 200, height: 200)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
         if images.count == 1 {
-            return images[0]
+            
+            let img1 = images[0].zq_resizeImage(size: CGSize(width: size.width, height: size.height))
+            img1.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            
         }else if images.count == 2 {
-            let size = CGSize(width: 200, height: 200)
+            
             let space:CGFloat = 10
+            let imgW = (size.width-space)/2
+            let img1 = images[0].zq_resizeImage(size: CGSize(width: imgW, height: size.height))
+            img1.draw(in: CGRect(x: 0, y: 0, width: imgW, height: size.height))
             
-            UIGraphicsBeginImageContextWithOptions(size, false, 0)
-//            let ctx: CGContext? = UIGraphicsGetCurrentContext()
-            let img1 = images[0].zq_resizeImage(size: CGSize(width: (size.width-space)/2, height: size.height))
-            img1.draw(in: CGRect(x: 0, y: 0, width: (size.width-space)/2, height: size.height))
-            
-            let img2 = images[1].zq_resizeImage(size: CGSize(width: (size.width-space)/2, height: size.height))
-            img2.draw(in: CGRect(x: (size.width-space)/2+space, y: 0, width: (size.width-space)/2, height: size.height))
-            
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            return image!
-            
+            let img2 = images[1].zq_resizeImage(size: CGSize(width: imgW, height: size.height))
+            img2.draw(in: CGRect(x: imgW+space, y: 0, width: imgW, height: size.height))
+ 
         }else if images.count <= 4 {
-            return images[0]
+            
+            let space:CGFloat = 10
+            let imgW = (size.width-space)/2
+            let imgH = (size.height-space)/2
+            
+            
+            for i in 0..<images.count {
+                let img1 = images[i].zq_resizeImage(size: CGSize(width: imgW, height: imgH))
+                let rect = CGRect(x: CGFloat(i%2)*(imgW+space), y: CGFloat(i/2)*(imgH+space), width: imgW, height: imgH)
+                
+                img1.draw(in: rect)
+                
+            }
+            
+         
         }else {
-            return images[0]
+            let space:CGFloat = 5
+            let imgW = (size.width-space*2)/3
+            let imgH = (size.height-space*2)/3
+            
+            
+            for i in 0..<images.count {
+                let img1 = images[i].zq_resizeImage(size: CGSize(width: imgW, height: imgH))
+                let rect = CGRect(x: CGFloat(i%3)*(imgW+space), y: CGFloat(i/3)*(imgH+space), width: imgW, height: imgH)
+                
+                img1.draw(in: rect)
+                
+            }
         }
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
     // 自由拉伸
     class func zq_resizeImage(named: String) -> UIImage {
@@ -103,7 +130,7 @@ extension UIImage {
         
         let scale = min(w/self.size.width, h/self.size.height)
         let newW = self.size.width*scale
-        let newH = self.size.width*scale
+        let newH = self.size.height*scale
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width: w, height: h), false, 0) // true 不透明
         self.draw(in: CGRect(x: (w-newW)/2, y: (h-newH)/2, width: newW, height: newH))

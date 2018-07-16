@@ -61,7 +61,7 @@ extension UIImage {
         
     }
     class func creat(images: [UIImage]) -> UIImage {
-        let size = CGSize(width: 200, height: 200)
+        let size = CGSize(width: 310, height: 440)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         if images.count == 1 {
             
@@ -219,6 +219,22 @@ extension UIImage {
         view.layer.render(in: ctx!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        return image!
+    }
+    
+    class func captureScrollView(_ view: UIScrollView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: view.contentSize.width, height: view.contentSize.height), false, 0)
+        let frame = view.frame
+        let contentOffset = view.contentOffset
+        view.contentOffset = .zero
+        view.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: view.contentSize.width, height: view.contentSize.height)
+        
+        let ctx: CGContext? = UIGraphicsGetCurrentContext()
+        view.layer.render(in: ctx!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        view.contentOffset = contentOffset
+        view.frame = frame
         return image!
     }
 }
